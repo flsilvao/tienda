@@ -1,0 +1,76 @@
+/* Popup de equipos 
+clase overlay que hará el efecto modal. El truco consiste en poner fija la posición de la capa 
+y sus 4 direcciones en 0. La propiedad visibility estará en hidden. La opacidad será 0 inicialmente, 
+haciendo una simple transición de medio segundo.
+*/
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+/*
+la pseudo clase target que funciona cuando un elemento está activo, como en este caso la clase overlay. 
+Lo que haremos será simplemente poner la propiedad visibility en visible, y regresar la opacidad en 1.
+*/
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+#popupBody{
+  width: 46%;
+  padding: 2%;
+  border-radius: 15px;
+  box-shadow: 0 0 5px #CCC;
+  background: #FFF;
+  position: relative;
+  transition: all 5s ease-in-out;
+  margin: 20% auto;    
+}
+#cerrar{
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #F00;
+}
+
+
+
+
+/* hover de  juegos */
+
+.tooltip {
+  position: static;
+ 
+  
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 30%;
+  background-color: #2F5DBC;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+
+
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
